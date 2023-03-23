@@ -1,4 +1,4 @@
-
+Solution for Northwestern University Knight Lab SQL Murder Mystery
 
 --crime_scene_report 
 --drivers_license
@@ -16,9 +16,9 @@ CREATE TABLE crime_scene_report ( date Integer, type Text, description Text, cit
 SELECT * FROM crime_scene_report 
 WHERE date = 20180115 AND City = 'SQL City' AND type = 'murder';
 
-Output:
-date	type	description	city
-20180115	murder	Security footage shows that there were 2 witnesses. The first witness lives at the last house on "Northwestern Dr". The second witness, named Annabel, lives somewhere on "Franklin Ave".	SQL City
+--Output:
+--date	type	description	city
+--20180115	murder	Security footage shows that there were 2 witnesses. The first witness lives at the last house on "Northwestern Dr". The second witness, named Annabel, lives somewhere on "Franklin Ave".	SQL City
 
 —Security footage shows that there were 2 witnesses. The first witness lives at the last house on "Northwestern Dr". The second witness, named Annabel, lives somewhere on "Franklin Ave”.—
 
@@ -28,17 +28,17 @@ CREATE TABLE person (id Integer PRIMARY KEY, name Text, license_id Integer, addr
 SELECT *, MAX(address_number)  FROM Person 
 WHERE address_street_name = 'Northwestern Dr';
 
-Output:
-id	name	license_id	address_number	address_street_name	ssn	Address
-14887	Morty Schapiro	118009	4919	Northwestern Dr	111564949	4919
+--Output:
+--id	name	license_id	address_number	address_street_name	ssn	Address
+--14887	Morty Schapiro	118009	4919	Northwestern Dr	111564949	4919
 
 
 SELECT  *  FROM Person 
 WHERE address_street_name = 'Franklin Ave' AND Name LIKE '%Annabel%';
 
-Output:
-id	name	license_id	address_number	address_street_name	ssn
-16371	Annabel Miller	490173	103	Franklin Ave	318771143
+--Output:
+--id	name	license_id	address_number	address_street_name	ssn
+--16371	Annabel Miller	490173	103	Franklin Ave	318771143
 
 
 CREATE TABLE interview (FOREIGN KEY (person_id) Integer REFERENCES person(id), transcript Text)
