@@ -1,4 +1,4 @@
-Solution for Northwestern University Knight Lab SQL Murder Mystery
+Solution for Northwestern University, Knight Lab 'SQL Murder Mystery'
 
 --crime_scene_report 
 --drivers_license
